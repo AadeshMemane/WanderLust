@@ -22,7 +22,6 @@ const reviewRouter = require('./routes/reviews.js')
 const userRouter = require('./routes/user.js')
 
 //MONGODB
-// const MONGO_URL = 'mongodb://127.0.0.1/wanderlust'
 const dbUrl = process.env.MONGO_ATLAS_URL
 async function main() {
   await mongoose.connect(dbUrl)
