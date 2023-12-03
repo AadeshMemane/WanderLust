@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h3>Create a new Post</h3>
+      <form
+        method="post"
+        action="/listings"
+        enctype="multipart/form-data"
+        novalidate
+        class="needs-validation"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-lable"> Title </label>
+          <input
+            name="listing[title]"
+            class="form-control"
+            placeholder="Enter Catchy Title"
+            type="text"
+            required
+          />
+          <div class="valid-feedback">Title Looks good!</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-lable"> Description </label>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            placeholder="Enter Short Description"
+            type="text"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Description is required...</div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-5">
+            <label for="price" class="form-lable"> Price </label>
+            <input
+              name="listing[price]"
+              placeholder="1200"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Enter Proper Price!</div>
+          </div>
+          <div class="mb-3 col-md-7">
+            <label for="country" class="form-lable"> Country </label>
+            <input
+              name="listing[country]"
+              placeholder="India"
+              class="form-control"
+              type="text"
+              required
+            />
+            <div class="invalid-feedback">Select Your Country!!!</div>
+          </div>
+        </div>
+        <!-- <div class="mb-3">
+          <label for="image" class="form-lable"> Image </label>
+          <input
+            name="listing[image]"
+            placeholder="ADD IMAGE/URL"
+            class="form-control"
+            type="text"
+          />
+        </div> -->
+        <div class="mb-3">
+          <label for="image" class="form-lable"> Upload Image</label>
+          <input
+            name="listing[image]"
+            class="form-control"
+            type="file"
+            required
+          />
+          <div class="invalid-feedback">Please Upload Image</div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-lable"> Location </label>
+          <input
+            name="listing[location]"
+            placeholder="Rajasthan, Jaipur"
+            class="form-control"
+            type="text"
+            required
+          />
+          <div class="invalid-feedback">Chose Your Location...</div>
+        </div>
+        <button class="btn btn-primary">Create</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>

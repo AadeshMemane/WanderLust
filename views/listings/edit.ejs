@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+<script>
+  const mapToken = '<%= process.env.MAP_TOKEN%>'
+  const coordinates =  <%- JSON.stringify(listing.geometry.coordinates)%>
+</script>
+<body>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h3>Edit Property</h3>
+      <form
+        method="post"
+        action="/listings/<%=listing._id%>?_method=put"
+        class="needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-lable"> Title </label>
+          <input
+            name="listing[title]"
+            value="<%=listing.title%>"
+            class="form-control"
+            type="text"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-lable"> Description </label>
+          <input
+            name="listing[description]"
+            class="form-control"
+            type="text"
+            required
+            value="<%=listing.description%>"
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-5">
+            <label for="price" class="form-lable"> Price </label>
+            <input
+              name="listing[price]"
+              class="form-control"
+              value="<%=listing.price%>"
+              type="number"
+              required
+            />
+            <div class="invalid-feedback">Enter Proper Price!</div>
+          </div>
+          <div class="mb-3 col-md-7">
+            <label for="country" class="form-lable"> Country </label>
+            <input
+              name="listing[country]"
+              class="form-control"
+              value="<%=listing.country%>"
+              type="text"
+              required
+            />
+            <div class="invalid-feedback">Select Your Country!!!</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-lable"> Original Image </label><br />
+          <img class="edit-img" src="<%=originalUrl%>" alt="Listing Image" />
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-lable"> Image </label>
+          <input
+            name="listing[image]"
+            class="form-control"
+            value="<%=listing.image%>"
+            type="file"
+          />
+          <div class="invalid-feedback">Image field must br filled</div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-lable"> Location </label>
+          <input
+            name="listing[location]"
+            class="form-control"
+            value="<%=listing.location%>"
+            type="text"
+            required
+          />
+          <div class="invalid-feedback">Select Your Location!!!</div>
+        </div>
+        <button class="btn edit-btn btn-dark mb-2">Edit</button>
+      </form>
+    </div>
+  </div>
+  <script src="/js/map.js"></script>
+</body>
