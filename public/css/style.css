@@ -121,9 +121,11 @@ body {
 /* SHOW PAGE */
 
 .show-img {
-  height: 300vh;
+  width: 40rem !important;
+  height: 20rem !important;
 }
 .btns .edit-btn {
+  width: 5rem !important;
   background-color: #fe424d !important;
   color: #ebebeb;
 }
@@ -175,8 +177,26 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 400px) {
+/* Mobile/Tab */
+
+@media screen and (max-width: 430px) {
+  /* Index */
+  .container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .row {
+    width: 100% !important;
+    margin: 0.25rem !important;
+  }
+
+  /* SignIn/Up */
+  .signinup {
+    margin: 1rem !important;
+    width: 100% !important;
+  }
   /* NavBar */
+
   .collapse {
     transition: 0.1s !important;
     height: 10rem !important;
@@ -196,12 +216,37 @@ body {
     margin: 1rem !important;
   }
   /* Show-Page */
+  .show-card {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0.5rem !important;
+  }
+
   .show-img {
+    /* margin-left: 25% !important; */
     height: 200px !important;
-    width: 200px !important;
+    width: 70% !important;
+  }
+  .review-card {
+    width: 70% !important;
+    margin: 0.5rem !important;
+    font-size: 1rem !important;
+    border: 0.1rem solid black !important;
+    border-radius: 1.5rem !important;
+    display: flex !important;
+  }
+  .card-body {
+    margin: 0.5rem !important;
+    padding: 0.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   #map {
-    height: 200px;
-    width: 100%;
+    height: 200px !important;
+    width: 100% !important;
+  }
+  .map {
+    width: 100% !important;
   }
 }
